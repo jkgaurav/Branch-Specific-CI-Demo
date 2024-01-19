@@ -1,0 +1,30 @@
+name: Branch Specific Workflows
+
+on:
+  push:
+    branches:
+      - main
+      - development
+      - feature/**
+
+jobs:
+  main:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "Workflow running on the Main branch"
+
+  development:
+    if: github.ref == 'refs/heads/development'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "Workflow running on the Development branch"
+
+  feature:
+    if: startsWith(github.ref, 'refs/heads/feature/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "Workflow running on a Feature branch"
