@@ -1,0 +1,13 @@
+{
+  "name": "branch-specific-ci-demo",
+  "version": "1.0.0",
+  "description": "A demo project for branch-specific workflows in GitHub Actions",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Running tests\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
